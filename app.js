@@ -15,9 +15,11 @@ const {
   unhandledErrors,
   handleCustomErrors,
 } = require("./errors/error-handler");
+var cors = require("cors");
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/api/topics", getTopics);
